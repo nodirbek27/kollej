@@ -6,12 +6,11 @@ import rasm2 from "../../assets/images/oqish.jpg";
 import rasm3 from "../../assets/images/qoshma.jpg";
 import rasm4 from "../../assets/images/ttjhome.jpg";
 import rasm5 from "../../assets/images/ttjtalaba.jpg";
-import rasm6 from "../../assets/images/ttjxona.jpg";
 
 const Carousel = () => {
   const [itemActive, setItemActive] = useState(0);
   const intervalRef = useRef(null);
-  const items = [rasm1, rasm2, rasm3, rasm4, rasm5, rasm6];
+  const items = [rasm1, rasm2, rasm3, rasm4, rasm5];
   const countItem = items.length;
 
   const nextSlide = useCallback(() => {
@@ -54,10 +53,9 @@ const Carousel = () => {
               className={`item ${index === itemActive ? "active" : ""}`}
             >
               <img src={item} alt={`carousel  ${index + 1}`} />
-              <div className="content">
-                <p>design</p>
-                <h2>Slider {index + 1}</h2>
-                <p>
+              <div className="content backdrop-brightness-50 p-4 text-[#ddd] rounded-xl">
+                <h2 className="text-2xl lg:text-3xl xl:text-4xl">Slider {index + 1}</h2>
+                <p className="text-lg xl:text-xl">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Labore, neque? Lorem ipsum dolor sit amet consectetur
                   adipisicing elit. Ipsum, ex.
@@ -67,12 +65,12 @@ const Carousel = () => {
           ))}
         </div>
 
-        <div className="arrows">
-          <button onClick={prevSlide} aria-label="Previous Slide">
-            <IoIosArrowDropleft />
+        <div className="arrows w-full p-5 absolute top-[45%] z-10 flex items-center justify-between">
+          <button className="flex items-center justify-center w-[40px] h-[40px] lg:w-[50px] lg:h-[50px]" onClick={prevSlide} aria-label="Previous Slide">
+            <IoIosArrowDropleft className="w-[25px] lg:w-[30px] h-auto" />
           </button>
-          <button onClick={nextSlide} aria-label="Next Slide">
-            <IoIosArrowDropright />
+          <button className="flex items-center justify-center w-[40px] h-[40px] lg:w-[50px] lg:h-[50px]" onClick={nextSlide} aria-label="Next Slide">
+            <IoIosArrowDropright className="w-[25px] lg:w-[30px] h-auto" />
           </button>
         </div>
 
@@ -80,11 +78,10 @@ const Carousel = () => {
           {items.map((item, index) => (
             <div
               key={index}
-              className={`item ${index === itemActive ? "active" : ""}`}
+              className={`item w-[60px] h-[45px] sm:w-[80px] sm:h-[60px] xl:w-[120px] xl:h-[90px] brightness-50 shrink-0 ${index === itemActive ? "brightness-110" : ""}`}
               onClick={() => handleThumbnailClick(index)}
             >
-              <img src={item} alt={`thumbnail  ${index + 1}`} />
-              <div className="content">Name Slider</div>
+              <img className="w-[100%] h-[100%] object-cover rounded-md" src={item} alt={`thumbnail ${index + 1}`} />
             </div>
           ))}
         </div>
