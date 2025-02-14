@@ -5,9 +5,7 @@ import { FaSquareInstagram } from "react-icons/fa6";
 import { PiYoutubeLogoFill } from "react-icons/pi";
 import { FaSquareFacebook } from "react-icons/fa6";
 import TextTranslate from "../TextTranslate/index";
-import Logo from "../../assets/icons/logo_kspi.png";
 import { useSelector } from "react-redux";
-import ItPark from "../../assets/icons/ItPark.png";
 import "./style.css";
 
 const Footer = () => {
@@ -66,7 +64,6 @@ const Footer = () => {
                     {/* about */}
                     <div className="mb-3">
                         <div className="flex items-end mb-3">
-                            <img className="w-10 mr-3" src={Logo} alt="" />
                             <h1
                                 className={`${
                                     isLang === "ru" ? "w-[240px]" : "w-[150px]"
@@ -175,11 +172,6 @@ const Footer = () => {
                     </p>
                     <p className="flex flex-wrap justify-center items-center m-0">
                         <TextTranslate id="footerContetn_2" />
-                        <img
-                            className="w-[20px] h-[20px] ms-2 me-[2px]"
-                            src={ItPark}
-                            alt="it park Logo"
-                        />{" "}
                         IT PARK
                     </p>
                 </div>

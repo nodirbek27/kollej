@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import kspi_logo from "../../assets/icons/logoWinter.png";
 import { Link, useLocation } from "react-router-dom";
 import { AiOutlineSearch, AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { useFormik } from "formik";
@@ -55,9 +54,6 @@ function Navbar() {
     } else {
       setFocusedSearInp(!isFocusedSearInp);
     }
-  };
-  const handleClickClose = () => {
-    setFocusedSearInp(false);
   };
   // Change Language log
   const handleClickLang = (lang) => {
@@ -140,7 +136,7 @@ function Navbar() {
       }  left-0 flex flex-col justify-between w-full h-auto z-50 px-4 py-2 sm:px-4 md:px-8 md:py-4 xl:px-0 xl:py-0`}
     >
       <nav className="flex justify-between">
-        {/* Emblema QDPI */}
+        {/* Emblema UDP2 */}
         <Link to="/">
           <div
             className={`${
@@ -149,11 +145,6 @@ function Navbar() {
                 : "sm:w-[250px] xl:w-[330px] 2xl:w-[340px] 3xl:w-[350px] w-[150px]"
             }  flex items-center gap-x-[10px] md:gap-x-[15px] xl:my-[15px] xl:ms-[40px]`}
           >
-            <img
-              className="w-[32px] sm:w-[36px] md:w-[45px] xl:w-[60px] 3xl:w-[70px] h-auto mb-2"
-              src={kspi_logo}
-              alt="icon"
-            />
             <p
               className={`${
                 scrollY
@@ -167,62 +158,16 @@ function Navbar() {
                               : "text-[#004269]"
                           }`
                     } `
-              } hidden sm:inline-block text-[11px] leading-4  font-bold sm:text-[13px] md:text-[18px] xl:leading-6 lg:text-[20px] xl:text-[24px] 3xl:text-[28px] `}
+              } sm:inline-block text-[11px] leading-4  font-bold sm:text-[13px] md:text-[18px] xl:leading-6 lg:text-[20px] xl:text-[24px] 3xl:text-[28px] `}
             >
               <TextTranslate id="navLogo" />
             </p>
           </div>
         </Link>
-        {/* /Emblema QDPI */}
+        {/* /Emblema UDP2 */}
         {/* Desktop Nav / Mobil menu btn */}
         <div className="w-full flex items-end justify-center flex-col">
-          {/* Header */}
-          <div className="hidden xl:flex xl:justify-between bg-[#004269] text-white px-[20px] rounded-bl-lg ">
-            {/* HEADER SEARCH FORM */}
-            <div
-              className={`${
-                noSearch && "hidden"
-              } flex items-center justify-center`}
-            >
-              <form onSubmit={formik.handleSubmit}>
-                <label
-                  className="w-auto h-full flex items-center cursor-pointer"
-                  htmlFor="searchText"
-                >
-                  <input
-                    className={`${
-                      isFocusedSearInp
-                        ? "w-[200px] border-b-[3px] border-white ms-4"
-                        : "w-[0px] -z-50"
-                    } style-transition-01 h-full focus:outline-none bg-inherit px-2`}
-                    placeholder="text..."
-                    onChange={formik.handleChange}
-                    value={formik.values.searchText}
-                    type="text"
-                    id="searchText"
-                  />
-                  <AiOutlineSearch
-                    onClick={() => handleClickSearch()}
-                    className={`${
-                      isFocusedSearInp && !formik.values.searchText.trim()
-                        ? "hidden"
-                        : "inline-block"
-                    } text-[25px]`}
-                  />
-                  <AiOutlineClose
-                    onClick={() => handleClickClose()}
-                    className={`${
-                      !isFocusedSearInp || formik.values.searchText.trim()
-                        ? "hidden"
-                        : "inline-block"
-                    } text-[25px] text-white`}
-                  />
-                </label>
-              </form>
-            </div>
-          </div>
           {/* /Header */}
-
           {/* Desktop nav Links */}
           <div className="hidden w-full h-full xl:flex xl:items-center xl:justify-end px-10 xl:pl-3 2xl:pl-10">
             <ul
@@ -260,11 +205,6 @@ function Navbar() {
                     tabIndex={2}
                     className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-52"
                   >
-                    <li className="text-[#004269] dark:text-white">
-                      <Link to="/institut-kengashi">
-                        <TextTranslate id="navDropInstitut_1" />
-                      </Link>
-                    </li>
                     <li className="text-[#004269] dark:text-white">
                       <Link to="/institut-haqida">
                         <TextTranslate id="navDropInstitut_2" />
@@ -409,11 +349,6 @@ function Navbar() {
                       </div>
                     </li>
                     <li className="text-[#004269] dark:text-white">
-                      <Link to="/akademik-litsey">
-                        <TextTranslate id="navDropFaoliyat_4" />
-                      </Link>
-                    </li>
-                    <li className="text-[#004269] dark:text-white">
                       <Link to="/ilmiy-faoliyat">
                         <TextTranslate id="navDropFaoliyat_5" />
                       </Link>
@@ -534,16 +469,6 @@ function Navbar() {
                         <TextTranslate id="navDropTalabalar_1" />
                       </Link>
                     </li>
-                    <li className="text-[#004269] dark:text-white">
-                      <Link to="/magistratura">
-                        <TextTranslate id="navDropTalabalar_2" />
-                      </Link>
-                    </li>
-                    <li className="text-[#004269] dark:text-white">
-                      <Link to="/talabalarTurarJoyi">
-                        <TextTranslate id="navDropTalabalar_3" />
-                      </Link>
-                    </li>
                   </ul>
                 </div>
               </li>
@@ -569,11 +494,6 @@ function Navbar() {
                     <li className="text-[#004269] dark:text-white">
                       <Link to="/abiturient-bakalavriat">
                         <TextTranslate id="navDropAbiturient_1" />
-                      </Link>
-                    </li>
-                    <li className="text-[#004269] dark:text-white">
-                      <Link to="/abiturient-magistratura">
-                        <TextTranslate id="navDropAbiturient_2" />
                       </Link>
                     </li>
                     <li className="text-[#004269] dark:text-white">
@@ -655,6 +575,10 @@ function Navbar() {
                 </div>
               </li>
             </ul>
+            <AiOutlineSearch
+              onClick={() => handleClickSearch()}
+              className={`text-[25px]`}
+            />
           </div>
           {/* /Desktop nav Links */}
 
@@ -799,14 +723,6 @@ function Navbar() {
                       <li className="text-white dark:text-white">
                         <Link
                           onClick={handleClickCloseMenu}
-                          to="/institut-kengashi"
-                        >
-                          <TextTranslate id="navDropInstitut_1" />
-                        </Link>
-                      </li>
-                      <li className="text-white dark:text-white">
-                        <Link
-                          onClick={handleClickCloseMenu}
                           to="/institut-haqida"
                         >
                           <TextTranslate id="navDropInstitut_2" />
@@ -947,14 +863,6 @@ function Navbar() {
                       <li className="my-4 leading-4 text-white dark:text-white">
                         <Link
                           onClick={handleClickCloseMenu}
-                          to="/akademik-litsey"
-                        >
-                          <TextTranslate id="navDropFaoliyat_4" />
-                        </Link>
-                      </li>
-                      <li className="my-4 leading-4 text-white dark:text-white">
-                        <Link
-                          onClick={handleClickCloseMenu}
                           to="/ilmiy-faoliyat"
                         >
                           <TextTranslate id="navDropFaoliyat_5" />
@@ -1063,19 +971,6 @@ function Navbar() {
                           <TextTranslate id="navDropTalabalar_1" />
                         </Link>
                       </li>
-                      <li className="my-4 leading-4 text-white dark:text-white">
-                        <Link onClick={handleClickCloseMenu} to="/magistratura">
-                          <TextTranslate id="navDropTalabalar_2" />
-                        </Link>
-                      </li>
-                      <li className="my-4 leading-4 text-white dark:text-white">
-                        <Link
-                          onClick={handleClickCloseMenu}
-                          to="/talabalarTurarJoyi"
-                        >
-                          <TextTranslate id="navDropTalabalar_3" />
-                        </Link>
-                      </li>
                     </ul>
                   </div>
                 </div>
@@ -1098,14 +993,6 @@ function Navbar() {
                           to="/abiturient-bakalavriat"
                         >
                           <TextTranslate id="navDropAbiturient_1" />
-                        </Link>
-                      </li>
-                      <li className="my-4 leading-4 text-white dark:text-white">
-                        <Link
-                          onClick={handleClickCloseMenu}
-                          to="/abiturient-magistratura"
-                        >
-                          <TextTranslate id="navDropAbiturient_2" />
                         </Link>
                       </li>
                       <li className="my-4 leading-4 text-white dark:text-white">
