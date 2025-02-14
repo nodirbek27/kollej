@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Breadcrumb from "../Breadcrumb";
 import APIYangilik from "../../services/yangilik";
+import { Link } from "react-router-dom";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSelector } from "react-redux";
@@ -22,6 +23,45 @@ const NewsCard = () => {
   const { id } = useParams();
   const [news, setNews] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [title, setTitle] = useState("");
+  const [latestNews, setLatestNews] = useState(null);
+  useEffect(() => {
+    const loadPost = async () => {
+      try {
+        await APIYangilik.get()
+          .then((res) => {
+            const sortedData = res.data.sort((a, b) => {
+              return new Date(b.sana) - new Date(a.sana);
+            });
+            setLatestNews(sortedData.slice(0, 10));
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    loadPost();
+  }, []);
+
+  useEffect(() => {
+    switch (Lang) {
+      case "uz":
+        setTitle("title_uz");
+        break;
+      case "ru":
+        setTitle("title_ru");
+        break;
+      case "en":
+        setTitle("title_en");
+        break;
+
+      default:
+        setTitle("title_uz");
+        break;
+    }
+  }, [Lang]);
 
   useEffect(() => {
     const loadNews = async () => {
@@ -42,7 +82,7 @@ const NewsCard = () => {
   }
 
   return (
-    <div className="md:px-5 xl:px-10 md:min-h-[calc(100vh-565px)] lg:min-h-[calc(100vh-400px)]">
+    <div className="px-5 xl:px-10 md:min-h-[calc(100vh-565px)] lg:min-h-[calc(100vh-400px)]">
       <div className="border-b-2 border-[#004269] block w-full">
         <Breadcrumb
           steps={[
@@ -53,8 +93,9 @@ const NewsCard = () => {
         />
       </div>
 
-      <div className="py-5 max-w-7xl mx-auto">
-        <div className="col-span-3">
+      <div className="py-5 max-w-7xl mx-auto md:grid md:grid-cols-4">
+        {/* Left section */}
+        <div className="md:col-span-3">
           {/* TITLE */}
           <h2 className="text-xl text-[#004269] lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold text-center mb-5">
             {news && news[`title_${Lang}`]}
@@ -232,6 +273,28 @@ const NewsCard = () => {
                 )}
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Right section */}
+        <div className="md:col-span-1 bg-white px-3">
+          <h2 className="text-lg lg:text-xl xl:text-2xl mb-3">
+            <TextTranslate id="latestNews" />
+          </h2>
+          <div>
+            {latestNews &&
+              latestNews.map((item, idx) => (
+                <Link
+                  className="w-full mb-5"
+                  to={`/yangiliklar/${item.id}`}
+                  key={idx}
+                >
+                  <div className="mb-3 border-b-2">
+                    <h2 className="text-md lg:text-lg">{item[title]}</h2>
+                    <p className="text-slate-400 text-end">{item.sana}</p>
+                  </div>
+                </Link>
+              ))}
           </div>
         </div>
       </div>
