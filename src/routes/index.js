@@ -7,7 +7,6 @@ import Qabul from "../pages/Qabul";
 import OnlineKuzatish from "../pages/OnlineKuzatish";
 import Rekvizitlar from "../pages/Rekvizitlar";
 import InstitutTuzilmasi from "../pages/InstitutTuzilmasi";
-import InstitutKengashi from "../pages/InstitutKengashi";
 import InstitutHaqida from "../pages/InstitutHaqida";
 import Rektorat from "../pages/Tuzilma/Rektorat";
 import Kafedralar from "../pages/Tuzilma/Kafedralar";
@@ -26,13 +25,6 @@ import AbiturientMagistratura from "../pages/Abiturient/Magistratura";
 import AbiturientCallMarkaz from "../pages/Abiturient/CallMarkaz";
 import AbiturientXorijiyTalaba from "../pages/Abiturient/HorijiyTalabalarQabul";
 import AbiturientMeyoriy from "../pages/Abiturient/MeyyoriyHuquqiyHuj";
-import Magistratura from "../pages/Talabalar/Magistratura";
-import MagistrDTSvaMalaka from "../pages/Talabalar/Magistratura/MagistrDTSvaMalaka";
-import MagistrOquvRejalari from "../pages/Talabalar/Magistratura/MagistrOquvRejalari";
-import MagistrFanDasturlari from "../pages/Talabalar/Magistratura/MagistrFanDasturlari";
-import MagistrFanKatalogi from "../pages/Talabalar/Magistratura/MagistrFanKatalogi";
-import TalabalarTurarJoyi from "../pages/Talabalar/TalabalarTurarJoyi";
-import AkademikLitsey from "../pages/Faoliyat/AkademikLitsey";
 import IlmiyFaolyat from "../pages/Faoliyat/IlmiyFaolyat";
 import JamoatchilikKengashiFaol from "../pages/Faoliyat/JamoatchilikKengashiFaol";
 import MadMarFaolyat from "../pages/Faoliyat/MadMarFaolyat";
@@ -116,11 +108,6 @@ const routes = [
     },
     {
         id: ID,
-        element: InstitutKengashi,
-        path: "/institut-kengashi",
-    },
-    {
-        id: ID,
         element: InstitutHaqida,
         path: "/institut-haqida",
     },
@@ -196,36 +183,6 @@ const routes = [
         element: FanKatalogi,
         path: "/fanKatalogi",
     },
-    {
-        id: ID,
-        element: Magistratura,
-        path: "/magistratura",
-    },
-    {
-        id: ID,
-        element: MagistrDTSvaMalaka,
-        path: "/magistrDTSvaMalaka",
-    },
-    {
-        id: ID,
-        element: MagistrOquvRejalari,
-        path: "/magistrOquvRejalari",
-    },
-    {
-        id: ID,
-        element: MagistrFanDasturlari,
-        path: "/magistrFanDasturlari",
-    },
-    {
-        id: ID,
-        element: MagistrFanKatalogi,
-        path: "/magistrFanKatalogi",
-    },
-    {
-        id: ID,
-        element: TalabalarTurarJoyi,
-        path: "/talabalarTurarJoyi",
-    },
     // Navbar Abiturient
     {
         id: ID,
@@ -263,11 +220,6 @@ const routes = [
         path: "/abiturient-xorijiy-talabalar",
     },
     //-------Faoliyat---------
-    {
-        id: ID,
-        element: AkademikLitsey,
-        path: "/akademik-litsey",
-    },
     {
         id: ID,
         element: IlmiyFaolyat,

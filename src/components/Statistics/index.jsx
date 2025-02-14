@@ -21,7 +21,7 @@ function Statistics() {
   const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
-    <div>
+    <div className="mb-12 lg:mb-16">
       {data &&
         data.map((item) => {
           return (

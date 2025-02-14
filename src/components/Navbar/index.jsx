@@ -14,6 +14,7 @@ import flag_1 from "../../assets/icons/flag-uz.png";
 import flag_2 from "../../assets/icons/flag-ru.png";
 import flag_3 from "../../assets/icons/flag-en.png";
 import TextTranslate from "../TextTranslate/index";
+import LanguageSelector from "../LanguageSelector";
 
 function Navbar() {
   const location = useLocation();
@@ -21,7 +22,6 @@ function Navbar() {
   const dispatch = useDispatch();
   const isLang = useSelector((state) => state.reducerLang.isLang);
 
-  const [isFocusedSearInp, setFocusedSearInp] = useState(false);
   const [isActiveMenu, setIsActiveMenu] = useState(false);
   const [scrollY, setScrollY] = useState(false);
   const [isDropF, setIsDropF] = useState(false);
@@ -49,11 +49,7 @@ function Navbar() {
   });
 
   const handleClickSearch = () => {
-    if (isFocusedSearInp && formik.values.searchText) {
-      formik.handleSubmit();
-    } else {
-      setFocusedSearInp(!isFocusedSearInp);
-    }
+    navigate(`/qidiruv`);
   };
   // Change Language log
   const handleClickLang = (lang) => {
@@ -133,7 +129,7 @@ function Navbar() {
           : `${location.pathname === "/" ? "absolute" : "relative shadow-xl"} `
       } ${
         isActiveMenu && "bg-white top-0"
-      }  left-0 flex flex-col justify-between w-full h-auto z-50 px-4 py-2 sm:px-4 md:px-8 md:py-4 xl:px-0 xl:py-0`}
+      } left-0 flex flex-col justify-between w-full h-auto z-50 px-4 py-2 sm:px-4 md:px-8 md:py-4 xl:px-0 xl:py-0`}
     >
       <nav className="flex justify-between">
         {/* Emblema UDP2 */}
@@ -520,64 +516,12 @@ function Navbar() {
                 </div>
               </li>
               <li>
-                <div className="flex items-end gap-x-2 ms-8">
-                  <img
-                    onClick={() => handleClickLang("uz")}
-                    className={` ${
-                      isLang === "uz" &&
-                      `border-b-[3px] ${
-                        scrollY
-                          ? "border-[#004269]"
-                          : `${
-                              location.pathname === "/"
-                                ? "border-white"
-                                : "border-[#004269]"
-                            }`
-                      } `
-                    } w-[30px] cursor-pointer 3xl:w-[35px]`}
-                    src={flag_1}
-                    alt="flag uz"
-                  />
-                  <img
-                    onClick={() => handleClickLang("ru")}
-                    className={` ${
-                      isLang === "ru" &&
-                      `border-b-[3px] ${
-                        scrollY
-                          ? "border-[#004269]"
-                          : `${
-                              location.pathname === "/"
-                                ? "border-white"
-                                : "border-[#004269]"
-                            }`
-                      } `
-                    } w-[30px] cursor-pointer 3xl:w-[35px]`}
-                    src={flag_2}
-                    alt="flag ru"
-                  />
-                  <img
-                    onClick={() => handleClickLang("en")}
-                    className={` ${
-                      isLang === "en" &&
-                      `border-b-[3px] ${
-                        scrollY
-                          ? "border-[#004269]"
-                          : `${
-                              location.pathname === "/"
-                                ? "border-white"
-                                : "border-[#004269]"
-                            }`
-                      } `
-                    } w-[30px] cursor-pointer 3xl:w-[35px]`}
-                    src={flag_3}
-                    alt="flag en"
-                  />
-                </div>
+              <LanguageSelector isLang={isLang} handleClickLang={handleClickLang} />
               </li>
             </ul>
             <AiOutlineSearch
               onClick={() => handleClickSearch()}
-              className={`text-[25px]`}
+              className={`ml-2 text-[25px] cursor-pointer ${isActiveMenu ? "text-black" : "text-white"}`}
             />
           </div>
           {/* /Desktop nav Links */}
