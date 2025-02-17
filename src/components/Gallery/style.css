@@ -1,0 +1,32 @@
+/* Tab style */
+.tab-btn {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #004269;
+  color: white;
+}
+
+.tabs-container {
+  padding-top: 1.5rem;
+}
+
+.tab-content {
+  display: grid;
+  gap: 1rem;
+}
+
+.images-container {
+  display: grid;
+  gap: 1rem;
+}
+
+img {
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}

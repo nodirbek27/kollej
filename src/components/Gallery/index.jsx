@@ -1,26 +1,18 @@
 import React, { useState, useEffect } from "react";
-import {
-  Tabs,
-  TabsHeader,
-  TabsBody,
-  Tab,
-  TabPanel,
-} from "@material-tailwind/react";
 import APIGallery from "../../services/gallery";
 import APIGalleryTur from "../../services/galleryTur";
 import TextTranslate from "../TextTranslate/index";
 import { useSelector } from "react-redux";
+import "./style.css"
 
 const Gallery = () => {
   const [data, setData] = useState([]);
   const [dataTur, setDataTur] = useState([]);
   const [pictures, setPictures] = useState([]);
-  const [initialActiveTab, setInitialActiveTab] = useState(null);
   const [activeTab, setActiveTab] = useState(null);
 
   const Lang = useSelector((state) => state.reducerLang.isLang);
 
-  // GET Gallery Types
   const getTurData = async () => {
     try {
       const res = await APIGalleryTur.get();
@@ -30,7 +22,6 @@ const Gallery = () => {
     }
   };
 
-  // GET Gallery Data
   const getData = async () => {
     try {
       const res = await APIGallery.get();
@@ -50,7 +41,7 @@ const Gallery = () => {
       const combinedData = dataTur.map((tur) => {
         const label = tur[`tur_${Lang}`];
         return {
-          label: label || 'Default Label', // Fallback
+          label: label || 'Default Label', 
           value: tur.id,
           content: data
             .filter((item) => item.tur_id === tur.id)
@@ -58,16 +49,11 @@ const Gallery = () => {
         };
       });
       setPictures(combinedData);
-
-      // Faqat initialActiveTab hali set qilinmagan bo'lsa set qiling
-      if (initialActiveTab === null && combinedData.length > 0) {
-        const middleIndex = Math.floor(combinedData.length / 2);
-        const middleTabValue = combinedData[middleIndex].value;
-        setInitialActiveTab(middleTabValue);
-        setActiveTab(middleTabValue);
+      if (combinedData.length > 0) {
+        setActiveTab(combinedData[0].value);
       }
     }
-  }, [dataTur, data, Lang, initialActiveTab]);
+  }, [dataTur, data, Lang]);
 
   return (
     <div className="max-w-7xl mx-auto my-5 md:my-16">
@@ -79,52 +65,38 @@ const Gallery = () => {
           <TextTranslate id="galleryIqtibos" />
         </div>
       </div>
-      {initialActiveTab && (
-        <Tabs
-          id="custom-animation"
-          value={activeTab}
-          className="-z-10 md:py-10"
-        >
-          <TabsHeader className="bg-[#eaf3ffa2] mx-2">
-            {pictures?.map(({ label, value }) => (
-              <Tab
+      {activeTab && (
+        <div className="tabs-container px-3">
+          <div className="tabs flex justify-start gap-4 mb-6">
+            {pictures.map(({ label, value }) => (
+              <button
                 key={value}
-                className={`text-xl font-semibold text-[#004269] ${
-                  activeTab === value ? "bg-white rounded" : ""
+                className={`tab-btn md:text-xl font-semibold whitespace-nowrap px-2 md:px-4 py-2 rounded-lg ${
+                  activeTab === value ? "bg-[#004269] text-white" : "bg-[#eaf3ffa2] text-[#004269]"
                 }`}
-                value={value}
                 onClick={() => setActiveTab(value)}
               >
                 {label}
-              </Tab>
+              </button>
             ))}
-          </TabsHeader>
-          <TabsBody
-            className="z-0"
-            animate={{
-              initial: { y: 250 },
-              mount: { y: 0 },
-              unmount: { y: 250 },
-            }}
-          >
-            {pictures?.map(({ value, content }) => (
-              <TabPanel
-                key={value}
-                value={value}
-                className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-              >
-                {content.slice(0, 4).map((imageUrl, index) => (
-                  <img
-                    key={index}
-                    className="block h-full w-full object-cover object-center p-2 rounded-2xl hover:scale-105 ease-linear duration-300"
-                    src={imageUrl}
-                    alt="gallery"
-                  />
-                ))}
-              </TabPanel>
-            ))}
-          </TabsBody>
-        </Tabs>
+          </div>
+          <div className="tab-content grid grid-cols-1 gap-4">
+            {pictures
+              .filter(({ value }) => value === activeTab)
+              .map(({ content }) => (
+                <div key={activeTab} className="images-container grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  {content.slice(0, 4).map((imageUrl, index) => (
+                    <img
+                      key={index}
+                      className="block h-full w-full object-cover object-center p-2 rounded-2xl hover:scale-105 transition-transform duration-300"
+                      src={imageUrl}
+                      alt={`gallery-image-${index}`}
+                    />
+                  ))}
+                </div>
+              ))}
+          </div>
+        </div>
       )}
     </div>
   );
