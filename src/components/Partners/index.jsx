@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import TextTranslate from "../TextTranslate";
 import styled, { keyframes } from "styled-components";
 import APIHamkor from "../../services/hamkorlar";
@@ -17,47 +17,52 @@ function Partners() {
   }, []);
 
   return (
-    <div className="max-w-8xl mx-auto py-10 bg-slate-100">
-      <h1 className="text-xl lg:text-4xl font-bold text-[#004269] text-center">
-        <TextTranslate id="hamkorlarimizTitle"/>
-      </h1>
+    <div className="py-10 bg-slate-100">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-xl lg:text-4xl font-bold text-[#004269]">
+          <TextTranslate id="hamkorlarimizTitle" />
+        </h2>
+      </div>
       <div>
         <Marquee>
           <MarqueeGroup>
-            {data && data.map((item, idx) => (
-              <ImageGroup className="w-[100px]" key={idx}>
-                <a href={item?.hamkor_url}>
-                  <Image
-                    className="w-[100px] h-[100px] bg-white"
-                    src={item?.hamkor_rasm}
-                  />
-                </a>
-              </ImageGroup>
-            ))}
+            {data &&
+              data.map((item, idx) => (
+                <ImageGroup className="w-[100px]" key={idx}>
+                  <a href={item?.hamkor_url}>
+                    <Image
+                      className="w-[100px] h-[100px] bg-white"
+                      src={item?.hamkor_rasm}
+                    />
+                  </a>
+                </ImageGroup>
+              ))}
           </MarqueeGroup>
           <MarqueeGroup>
-            {data && data.map((item, idx) => (
-              <ImageGroup className="w-[100px]" key={idx}>
-                <a href={item?.hamkor_url}>
-                  <Image
-                    className="w-[100px] h-[100px] bg-white"
-                    src={item?.hamkor_rasm}
-                  />
-                </a>
-              </ImageGroup>
-            ))}
+            {data &&
+              data.map((item, idx) => (
+                <ImageGroup className="w-[100px]" key={idx}>
+                  <a href={item?.hamkor_url}>
+                    <Image
+                      className="w-[100px] h-[100px] bg-white"
+                      src={item?.hamkor_rasm}
+                    />
+                  </a>
+                </ImageGroup>
+              ))}
           </MarqueeGroup>
           <MarqueeGroup>
-            {data && data.map((item, idx) => (
-              <ImageGroup className="w-[100px]" key={idx}>
-                <a href={item?.hamkor_url}>
-                  <Image
-                    className="w-[100px] h-[100px] bg-white"
-                    src={item?.hamkor_rasm}
-                  />
-                </a>
-              </ImageGroup>
-            ))}
+            {data &&
+              data.map((item, idx) => (
+                <ImageGroup className="w-[100px]" key={idx}>
+                  <a href={item?.hamkor_url}>
+                    <Image
+                      className="w-[100px] h-[100px] bg-white"
+                      src={item?.hamkor_rasm}
+                    />
+                  </a>
+                </ImageGroup>
+              ))}
           </MarqueeGroup>
         </Marquee>
       </div>

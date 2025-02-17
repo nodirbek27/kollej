@@ -7,22 +7,10 @@ import TextTranslate from "../../components/TextTranslate";
 const AuthorPage = () => {
     const data = [
         {
-            name: "Azimjon Meliboev",
-            phone: "+998912022444",
-            email: "azimeliboev2000@gmail.com",
-            tme: "https://t.me/Azimjon_Meliboev",
-        },
-        {
             name: "Nurmamatov Nodirbek",
             phone: "+998992226660",
             email: "nodirjon0927@gmail.com",
             tme: "https://t.me/nodirbek2709",
-        },
-        {
-            name: "Tuychiyev Orifxon",
-            phone: "+998905863595",
-            email: "orifxontuychiyev@gmail.com",
-            tme: "https://t.me/Orifxon_Tuychiyev",
         },
     ];
     return (

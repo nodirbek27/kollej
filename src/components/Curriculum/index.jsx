@@ -6,7 +6,7 @@ function Curriculum() {
   return (
     <div className="bg-slate-100">
       <div className="max-w-xs md:max-w-7xl mx-auto md:py-16 py-10">
-        <h1 className="text-2xl md:text-4xl font-bold text-[#004269] text-center">
+        <h1 className="text-2xl md:text-4xl font-bold text-[#004269]">
           <TextTranslate id="oquvDasturlari"/>
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:mx-10 lg:mx-0 mt-12">

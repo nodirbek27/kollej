@@ -7,20 +7,20 @@ import ContactUs from "../../components/Contact";
 import Partners from "../../components/Partners";
 import Gallery from "../../components/Gallery";
 import Statistics from "../../components/Statistics";
-// import AboutUs from "../../components/AboutUs";
+import AboutUs from "../../components/AboutUs";
 import Announcements from "../../components/Announcements";
 
 const Main = () => {
   return (
     <div>
       <Carousel />
-      {/* <AboutUs /> */}
       <NewsHome />
       <Statistics />
       <Announcements />
       <StudentOpinion />
       <Gallery />
       <Curriculum />
+      <AboutUs />
       <Partners />
       <ContactUs />
     </div>
