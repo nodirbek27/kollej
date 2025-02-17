@@ -202,12 +202,12 @@ function Navbar() {
                     className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-52"
                   >
                     <li className="text-[#004269] dark:text-white">
-                      <Link to="/institut-haqida">
+                      <Link to="/politexnikum-haqida">
                         <TextTranslate id="navDropInstitut_2" />
                       </Link>
                     </li>
                     <li className="text-[#004269] dark:text-white">
-                      <Link to="/institut-tuzilma">
+                      <Link to="/politexnikum-tuzilma">
                         <TextTranslate id="navDropInstitut_3" />
                       </Link>
                     </li>
@@ -257,7 +257,7 @@ function Navbar() {
                             </Link>
                           </li>
                           <li className="text-[#004269] dark:text-white">
-                            <Link to="/hujjatlar/institut-ichki-me'yoriy-huquqiy-hujjatlari">
+                            <Link to="/hujjatlar/politexnikum-ichki-me'yoriy-huquqiy-hujjatlari">
                               <TextTranslate id="navDropInstitut_6_drop_4" />
                             </Link>
                           </li>
@@ -419,7 +419,7 @@ function Navbar() {
                       </Link>
                     </li>
                     <li className="text-[#004269] dark:text-white">
-                      <Link to="/fakultetlar">
+                      <Link to="/yonalishlar">
                         <TextTranslate id="navDropTuzilma_2" />
                       </Link>
                     </li>
@@ -667,7 +667,7 @@ function Navbar() {
                       <li className="text-white dark:text-white">
                         <Link
                           onClick={handleClickCloseMenu}
-                          to="/institut-haqida"
+                          to="/politexnikum-haqida"
                         >
                           <TextTranslate id="navDropInstitut_2" />
                         </Link>
@@ -675,7 +675,7 @@ function Navbar() {
                       <li className="text-white dark:text-white">
                         <Link
                           onClick={handleClickCloseMenu}
-                          to="/institut-tuzilma"
+                          to="/politexnikum-tuzilma"
                         >
                           <TextTranslate id="navDropInstitut_3" />
                         </Link>
@@ -723,7 +723,7 @@ function Navbar() {
                             <li className="text-white">
                               <Link
                                 onClick={handleClickCloseMenu}
-                                to="/hujjatlar/institut-ichki-me'yoriy-huquqiy-hujjatlari"
+                                to="/hujjatlar/politexnikum-ichki-me'yoriy-huquqiy-hujjatlari"
                               >
                                 <TextTranslate id="navDropInstitut_6_drop_4" />
                               </Link>

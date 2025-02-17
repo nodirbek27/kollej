@@ -99,16 +99,16 @@ const routes = [
         element: Rekvizitlar,
         path: "/rekvizitlar",
     },
-    //-------Institut---------
+    //-------Politexnikum---------
     {
         id: ID,
         element: InstitutTuzilmasi,
-        path: "/institut-tuzilma",
+        path: "/politexnikum-tuzilma",
     },
     {
         id: ID,
         element: InstitutHaqida,
-        path: "/institut-haqida",
+        path: "/politexnikum-haqida",
     },
     {
         id: ID,
@@ -128,7 +128,7 @@ const routes = [
     {
         id: ID,
         element: HujjatIIHMh,
-        path: "/hujjatlar/institut-ichki-me'yoriy-huquqiy-hujjatlari",
+        path: "/hujjatlar/politexnikum-ichki-me'yoriy-huquqiy-hujjatlari",
     },
     //-------Tuzilma---------
     {
@@ -149,7 +149,7 @@ const routes = [
     {
         id: ID,
         element: Fakultetlar,
-        path: "/fakultetlar",
+        path: "/yonalishlar",
     },
     {
         id: ID,
