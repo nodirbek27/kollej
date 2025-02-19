@@ -134,7 +134,7 @@ const routes = [
     {
         id: ID,
         element: Rektorat,
-        path: "/rektorat",
+        path: "/ma'muriyat",
     },
     {
         id: ID,

@@ -414,7 +414,7 @@ function Navbar() {
                     className="dropdown-content z-10 menu p-2 shadow bg-base-100 rounded-box w-52"
                   >
                     <li className="text-[#004269] dark:text-white">
-                      <Link to="/rektorat">
+                      <Link to="/ma'muriyat">
                         <TextTranslate id="navDropTuzilma_1" />
                       </Link>
                     </li>
@@ -870,12 +870,12 @@ function Navbar() {
                   <div className="collapse-content max-w-[280px]">
                     <ul>
                       <li className="my-4 leading-4 text-white dark:text-white">
-                        <Link onClick={handleClickCloseMenu} to="/rektorat">
+                        <Link onClick={handleClickCloseMenu} to="/ma'muriyat">
                           <TextTranslate id="navDropTuzilma_1" />
                         </Link>
                       </li>
                       <li className="my-4 leading-4 text-white dark:text-white">
-                        <Link onClick={handleClickCloseMenu} to="/fakultetlar">
+                        <Link onClick={handleClickCloseMenu} to="/yonalishlar">
                           <TextTranslate id="navDropTuzilma_2" />
                         </Link>
                       </li>

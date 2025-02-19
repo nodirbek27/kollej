@@ -12,9 +12,9 @@ const Footer = () => {
   return (
     <footer className="w-full bg-gradient-to-r from-blue-900 to-gray-900 text-white py-10">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* About */}
-          <div>
+          <div className="lg:col-span-2">
             <h1 className="text-lg font-bold mb-4">
               <TextTranslate id="navLogo" />
             </h1>
@@ -79,7 +79,7 @@ const Footer = () => {
 
           {/* Social Media */}
           <div className="space-y-4">
-            <h1 className="text-lg font-bold mb-4">Biz bilan bog'laning</h1>
+            <h1 className="text-lg font-bold mb-4"><TextTranslate id="socialLinks" /></h1>
             <div className="flex space-x-4">
               <Link
                 to="https://t.me/kspi_rector"
