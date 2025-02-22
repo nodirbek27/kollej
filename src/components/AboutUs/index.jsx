@@ -12,7 +12,7 @@ function AboutUs() {
         </h1>
       </div>
       <div className="px-2 md:px-10 xl:px-0">
-        <p className="text-xl md:text-[2rem] font-light font_source md:leading-[3.5rem] my-10">
+        <p className="text-center md:text-start text-xl md:text-[2rem] font-light font_source md:leading-[3.5rem] my-10">
           <TextTranslate id="bizHaqimizda" />
         </p>
       </div>

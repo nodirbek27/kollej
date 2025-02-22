@@ -507,11 +507,11 @@ function Navbar() {
                         <TextTranslate id="navDropAbiturient_5" />
                       </Link>
                     </li>
-                    <li className="text-[#004269] dark:text-white">
+                    {/* <li className="text-[#004269] dark:text-white">
                       <Link to="https://xtqabul.kspi.uz/" target="blank">
                         <TextTranslate id="navDropAbiturient_6" />
                       </Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </li>
@@ -960,7 +960,7 @@ function Navbar() {
                           <TextTranslate id="navDropAbiturient_5" />
                         </Link>
                       </li>
-                      <li className="my-4 leading-4 text-white dark:text-white">
+                      {/* <li className="my-4 leading-4 text-white dark:text-white">
                         <Link
                           onClick={handleClickCloseMenu}
                           to="https://xtqabul.kspi.uz/"
@@ -968,7 +968,7 @@ function Navbar() {
                         >
                           <TextTranslate id="navDropAbiturient_6" />
                         </Link>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </div>
