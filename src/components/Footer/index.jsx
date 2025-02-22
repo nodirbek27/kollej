@@ -37,17 +37,17 @@ const Footer = () => {
                   to="mailto:kspi_info@edu.uz"
                   className="hover:text-blue-400"
                 >
-                  kspi_info@edu.uz
+                  politexnikum_info@edu.uz
                 </Link>
               </li>
               <li>
-                <Link to="mailto:info.kspi.uz" className="hover:text-blue-400">
-                  info.kspi.uz
+                <Link to="tel:+998735152950" className="hover:text-blue-400">
+                  <TextTranslate id="ishonchTelefon" />: +998 73 515 29 50
                 </Link>
               </li>
               <li>
-                <Link to="tel:+998732493838" className="hover:text-blue-400">
-                  <TextTranslate id="ishonchTelefon" />: +998 73 249 38 38
+                <Link to="tel: +998903620027" className="hover:text-blue-400">
+                  <TextTranslate id="ishonchTelefon" />:  +998 90 362 00 27
                 </Link>
               </li>
             </ul>

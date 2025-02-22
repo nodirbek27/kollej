@@ -58,8 +58,6 @@ const ContactUs = () => {
                 <MdMarkEmailUnread className="text-blue-600 w-10 h-10 mr-4" />
                 <p className="text-gray-800 text-lg font-medium">
                   <a href={`mailto:${item.email_1}`} className="hover:text-blue-700">{item.email_1}</a>
-                  <br />
-                  <a href={`mailto:${item.email_2}`} className="hover:text-blue-700">{item.email_2}</a>
                 </p>
               </div>
             </div>
