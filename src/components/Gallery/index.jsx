@@ -85,7 +85,7 @@ const Gallery = () => {
                   {content.slice(0, 4).map((imageUrl, index) => (
                     <img
                       key={index}
-                      className="block h-full w-full object-cover object-center p-2 rounded-2xl hover:scale-105 transition-transform duration-300"
+                      className="gallery_img block h-full w-full object-cover object-center p-2 rounded-2xl hover:scale-105 transition-transform duration-300"
                       src={imageUrl}
                       alt={`gallery-image-${index}`}
                     />
