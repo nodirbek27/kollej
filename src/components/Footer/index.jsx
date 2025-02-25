@@ -34,10 +34,10 @@ const Footer = () => {
             <ul className="mt-2 space-y-1">
               <li>
                 <Link
-                  to="mailto:kspi_info@edu.uz"
+                  to="mailto:nozimjon3620027@gmail.com"
                   className="hover:text-blue-400"
                 >
-                  politexnikum_info@edu.uz
+                  nozimjon3620027@gmail.com
                 </Link>
               </li>
               <li>
@@ -115,10 +115,10 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-gray-600 mt-8 pt-4 text-center text-sm opacity-80">
-          <Link to="/authors" className="hover:text-blue-400">
+          <a href="https://itera.uz" target="blank" className="hover:text-blue-400">
             <TextTranslate id="footerContetn_1" />{" "}
-            <span className="font-semibold">IT PARK</span>
-          </Link>
+            <span className="font-semibold">ITERA</span>
+          </a>
         </div>
       </div>
     </footer>
