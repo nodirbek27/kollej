@@ -77,10 +77,9 @@ function AbiturientBakalavrCom() {
             </p>
           </div>
         </Link>
-        <a
-          href="https://xtqabul.kspi.uz/"
+        <Link
+          to="#"
           className="shadow-xl flex justify-center items-center md:h-60 py-5 rounded-lg bg-slate-200 group hover:bg-[#2A4D64] hover:scale-105 ease-in-out duration-300"
-          target="blank"
         >
           <div>
             <GrCatalog className="text-7xl md:text-8xl mx-auto group-hover:text-slate-200" />
@@ -88,7 +87,7 @@ function AbiturientBakalavrCom() {
               <TextTranslate id="abiBakalavrLink4" />
             </p>
           </div>
-        </a>
+        </Link>
       </div>
     </div>
   );
