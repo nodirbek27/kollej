@@ -507,11 +507,6 @@ function Navbar() {
                         <TextTranslate id="navDropAbiturient_5" />
                       </Link>
                     </li>
-                    {/* <li className="text-[#004269] dark:text-white">
-                      <Link to="https://xtqabul.kspi.uz/" target="blank">
-                        <TextTranslate id="navDropAbiturient_6" />
-                      </Link>
-                    </li> */}
                   </ul>
                 </div>
               </li>
@@ -521,7 +516,7 @@ function Navbar() {
             </ul>
             <AiOutlineSearch
               onClick={() => handleClickSearch()}
-              className={`ml-2 text-[25px] cursor-pointer ${isActiveMenu ? "text-black" : "text-white"}`}
+              className={`ml-2 text-[25px] cursor-pointer ${!isActiveMenu ? "text-[#004269]" : "text-white"}`}
             />
           </div>
           {/* /Desktop nav Links */}
@@ -960,15 +955,6 @@ function Navbar() {
                           <TextTranslate id="navDropAbiturient_5" />
                         </Link>
                       </li>
-                      {/* <li className="my-4 leading-4 text-white dark:text-white">
-                        <Link
-                          onClick={handleClickCloseMenu}
-                          to="https://xtqabul.kspi.uz/"
-                          target="blank"
-                        >
-                          <TextTranslate id="navDropAbiturient_6" />
-                        </Link>
-                      </li> */}
                     </ul>
                   </div>
                 </div>
