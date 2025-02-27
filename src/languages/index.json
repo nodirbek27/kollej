@@ -53,8 +53,8 @@
 
     "oquvDasturlari": "O'quv dasturlari",
     "fanlarKatalog": "Fanlar katalogi",
-    "bakalavrMalakaTalablari": "Bakalavr malaka talabalar",
-    "magistrMalakaTalablari": "Magistr malaka talabalar",
+    "bakalavrMalakaTalablari": "Qabul hujjatlari",
+    "magistrMalakaTalablari": "O'quv rejalari",
     "oquvDasturlariBatafsil": "Batafsil",
 
     "qoshma": "Qo'shma ta'lim",
@@ -367,8 +367,8 @@
 
     "oquvDasturlari": "Образовательные программы",
     "fanlarKatalog": "Каталог научных дисциплин",
-    "bakalavrMalakaTalablari": "Квалификационные требования бакалавриата",
-    "magistrMalakaTalablari": "Квалификационные требования магистратуры",
+    "bakalavrMalakaTalablari": "Приемные документы",
+    "magistrMalakaTalablari": "Учебные планы",
     "oquvDasturlariBatafsil": "Подробно",
 
     "qoshma": "Совместное образование",
@@ -674,8 +674,8 @@
 
     "oquvDasturlari": "Educational programs",
     "fanlarKatalog": "Catalog of sciences",
-    "bakalavrMalakaTalablari": "Bachelor's degree students",
-    "magistrMalakaTalablari": "Master's degree students",
+    "bakalavrMalakaTalablari": "Admission documents",
+    "magistrMalakaTalablari": "Academic plans",
     "oquvDasturlariBatafsil": "More",
 
     "qoshma": "Co-education",
