@@ -2,12 +2,14 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 import "./style.css";
 import APICarousel from "../../services/carousel";
+import { useSelector } from "react-redux";
 
 const Carousel = () => {
   const [itemActive, setItemActive] = useState(0);
   const [data, setData] = useState([]);
   const intervalRef = useRef(null);
   const countItem = data?.length;
+  const Lang = useSelector((state) => state.reducerLang.isLang);
 
   const nextSlide = useCallback(() => {
     setItemActive((prev) => (prev + 1) % countItem);
@@ -64,9 +66,9 @@ const Carousel = () => {
               <img src={item?.rasm} alt={`carousel  ${index + 1}`} />
               <div className="content backdrop-brightness-50 p-4 text-[#ddd] rounded-xl">
                 <h2 className="text-2xl lg:text-3xl xl:text-4xl">
-                  {item?.title_uz}
+                  {item[`title_${Lang}`]}
                 </h2>
-                <p className="text-lg xl:text-xl">{item?.body_uz}</p>
+                <p className="text-lg xl:text-xl">{item[`body_${Lang}`]}</p>
               </div>
             </div>
           ))}
