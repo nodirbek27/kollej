@@ -137,7 +137,7 @@ function Navbar() {
           <div
             className={`${
               isLang === "ru"
-                ? "sm:w-[270px] md:w-[330px] lg:w-[380px] xl:w-[380px] 2xl:w-[450px] 3xl:w-[500px] w-[150px]"
+                ? "sm:w-[270px] md:w-[330px] lg:w-[380px] xl:w-[320px] 2xl:w-[420px] 3xl:w-[500px] w-[150px]"
                 : "sm:w-[250px] xl:w-[330px] 2xl:w-[340px] 3xl:w-[350px] w-[150px]"
             }  flex items-center gap-x-[10px] md:gap-x-[15px] xl:my-[15px] xl:ms-[40px]`}
           >
