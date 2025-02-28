@@ -73,7 +73,7 @@ const NewsHome = () => {
               <div className="card bg-base-100 max-w-96 shadow-lg hover:shadow-xl group/item min-h-full flex flex-col mx-auto">
                 <figure className="h-48 md:h-52 xl:h-60 w-full overflow-hidden">
                   <img
-                    className="overflow-hidden group-hover/item:scale-105 ease-in duration-300 ..."
+                    className="overflow-hidden h-full w-full object-cover group-hover/item:scale-105 ease-in duration-300 ..."
                     src={item.rasm_1?.replace(/^http:\/\//i, "https://")}
                     alt="News"
                   />
