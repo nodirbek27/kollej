@@ -47,7 +47,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="tel: +998903620027" className="hover:text-blue-400">
-                  <TextTranslate id="ishonchTelefon" />:  +998 90 362 00 27
+                  <TextTranslate id="ishonchTelefon" />: +998 90 362 00 27
                 </Link>
               </li>
             </ul>
@@ -79,31 +79,33 @@ const Footer = () => {
 
           {/* Social Media */}
           <div className="space-y-4">
-            <h1 className="text-lg font-bold mb-4"><TextTranslate id="socialLinks" /></h1>
+            <h1 className="text-lg font-bold mb-4">
+              <TextTranslate id="socialLinks" />
+            </h1>
             <div className="flex space-x-4">
               <Link
-                to="https://t.me/kspi_rector"
+                to="https://t.me/uchoprik_2_son_politexnikumi"
                 target="_blank"
                 className="group transition duration-300"
               >
                 <FaTelegram className="text-3xl bg-blue-500 text-white p-2 rounded-full transition duration-300 group-hover:bg-blue-700 group-hover:scale-110" />
               </Link>
               <Link
-                to="https://www.instagram.com/kspi_uz/"
-                target="_blank"
+                to="#"
+                // target="_blank"
                 className="group transition duration-300"
               >
                 <FaSquareInstagram className="text-3xl bg-gradient-to-r from-pink-500 to-yellow-500 text-white p-2 rounded-full transition duration-300 group-hover:scale-110" />
               </Link>
               <Link
-                to="https://www.youtube.com/channel/UC6ThR8cLnJmdWDGDz9PR85Q/featured"
-                target="_blank"
+                to="#"
+                // target="_blank"
                 className="group transition duration-300"
               >
                 <PiYoutubeLogoFill className="text-3xl bg-red-500 text-white p-2 rounded-full transition duration-300 group-hover:bg-red-700 group-hover:scale-110" />
               </Link>
               <Link
-                to="https://www.facebook.com/kspi.uz.56"
+                to="https://www.facebook.com/share/19ALHnueaS/"
                 target="_blank"
                 className="group transition duration-300"
               >
@@ -115,7 +117,11 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-gray-600 mt-8 pt-4 text-center text-sm opacity-80">
-          <a href="https://itera.uz" target="blank" className="hover:text-blue-400">
+          <a
+            href="https://itera.uz"
+            target="blank"
+            className="hover:text-blue-400"
+          >
             <TextTranslate id="footerContetn_1" />{" "}
             <span className="font-semibold">ITERA</span>
           </a>
